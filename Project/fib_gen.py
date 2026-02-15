@@ -9,6 +9,14 @@ def fib_gen():
         a = b
         b = next_val
 
-for val in fib_gen():
-    print(val)
-    time.sleep(0.5)
+def run(iterator, seconds):
+    end_time = time.time() + seconds
+    print(f"Working {seconds} seconds")
+    for val in iterator:
+        if time.time() > end_time:
+            break
+        print(val)
+        time.sleep(0.1)
+
+fib_iter = fib_gen()
+run(fib_iter, 3)
