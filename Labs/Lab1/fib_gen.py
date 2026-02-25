@@ -17,6 +17,9 @@ def run(iterator, seconds):
             break
         print(val)
         time.sleep(0.1)
+        
+
+seconds = int(input("How many seconds work?: "))
 
 fib_iter = fib_gen()
-run(fib_iter, 3)
+run(fib_iter, seconds)
