@@ -1,6 +1,7 @@
 [project]
 name = "fib_gen_lib"
 authors = [{name = "Kyrylo Yukhymchuk"}]
+version = "0.1.0"
 
 [build-system]
 requires = ["setuptools"]

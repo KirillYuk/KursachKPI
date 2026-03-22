@@ -1,0 +1,6 @@
+generator.py
+pyproject.toml
+fib_gen_lib.egg-info/PKG-INFO
+fib_gen_lib.egg-info/SOURCES.txt
+fib_gen_lib.egg-info/dependency_links.txt
+fib_gen_lib.egg-info/top_level.txt
