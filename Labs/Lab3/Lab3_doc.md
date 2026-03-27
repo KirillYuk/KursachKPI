@@ -10,7 +10,7 @@ from mem import memo
 
 @memo()
 def multiply(x):
-    print("calc forr", x)
+    print("calc for", x)
     return x*x
 
 print(multiply(3))
@@ -24,10 +24,10 @@ print(multiply(5))
 
 **output:**
 ```
-calc forr 3
+calc for 3
 9
 9
-calc forr 5
+calc for 5
 25
 25
 25

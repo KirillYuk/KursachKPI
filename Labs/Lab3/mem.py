@@ -1,15 +1,15 @@
 from functools import wraps
 
 def memo():
-    cashe = {}
+    cache = {}
 
-    def dec(func):
+    def decorator(func):
         def wraper(*args):
             key = str(args)
-            if key in cashe:
-                return cashe[key]
+            if key in cache:
+                return cache[key]
             res = func(*args)
-            cashe[key] = res
+            cache[key] = res
             return res
         return wraper
-    return dec
+    return decorator
