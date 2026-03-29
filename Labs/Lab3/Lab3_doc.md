@@ -229,3 +229,42 @@ calc 2 * 3
 key: ()[('x', 2), ('y', 3)]
 6
 ```
+
+### `TTL` support
+
+Реалізовано механізм TTL (Time To Live), який обмежує час зберігання значень у кеші. Якщо час життя елемента перевищено, він вважається застарілим і обчислюється повторно.
+
+**test.py**
+```python 
+@memo(ttl=2)
+def multiply(x, y=2):
+    print("calc", x, "*", y)
+    return x * y
+
+print(multiply(2))
+print(multiply(2))
+time.sleep(2)
+print(multiply(2))
+print(multiply(2))
+time.sleep(1.99)
+print(multiply(2))
+```
+
+**output:**
+```
+key: (2,)[]
+calc 2 * 2
+4
+key: (2,)[]
+4
+key: (2,)[]
+calc 2 * 2
+4
+key: (2,)[]
+4
+key: (2,)[]
+4
+
+[Done] exited with code=0 in 4.079 seconds
+```
+З результатів тестування видно, що з кешу видалилось значення при затримці >=2 секунд, натомість значення при затримці <2 залишилось в кеші.
