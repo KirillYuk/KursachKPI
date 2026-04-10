@@ -10,3 +10,6 @@ print(q.peek('lowest'))
 print(q.peek('oldest'))
 print(q.peek('newest'))
 print(q.queue)
+
+
+# ПОФІКСИТЬ БАГ КОЛИ ПУСТА ЧЕРГА БО ВИДАЄ ПОМИЛКУ
