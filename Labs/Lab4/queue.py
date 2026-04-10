@@ -12,6 +12,10 @@ class BiQueue:
             item = max(self.queue, key=lambda x: x[1])
         elif mode == 'lowest':
             item = min(self.queue, key=lambda x: x[1])
+        elif mode == 'oldest':
+            item = min(self.queue, key=lambda x: x[0])
+        elif mode == 'newest':
+            item = max(self.queue, key=lambda x: x[0])
 
         self.queue.remove(item)
         return item[2]
