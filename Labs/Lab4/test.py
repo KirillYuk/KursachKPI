@@ -8,15 +8,8 @@ q.enqueue("A", 5)
 q.enqueue("B", 1)
 q.enqueue("C", 3)
 
-if q.dequeue('highest') == "A":
-    print("dequeue highest: PASS")
-else:
-    print("dequeue highest: FAIL")
-
-if q.dequeue('lowest') == "B":
-    print("dequeue lowest: PASS")
-else:
-    print("dequeue lowest: FAIL")
+print("dequeue highest:", "PASS" if q.dequeue('highest') == "A" else "FAIL")
+print("dequeue lowest:", "PASS" if q.dequeue('lowest') == "B" else "FAIL")
 
 
 q = BiQueue()
@@ -24,15 +17,8 @@ q.enqueue("A", 5)
 q.enqueue("B", 1)
 q.enqueue("C", 3)
 
-if q.dequeue('oldest') == "A":
-    print("dequeue oldest: PASS")
-else:
-    print("dequeue oldest: FAIL")
-
-if q.dequeue('newest') == "C":
-    print("dequeue newest: PASS")
-else:
-    print("dequeue newest: FAIL")
+print("dequeue oldest:", "PASS" if q.dequeue('oldest') == "A" else "FAIL")
+print("dequeue newest:", "PASS" if q.dequeue('newest') == "C" else "FAIL")
 
 
 q = BiQueue()
@@ -40,19 +26,12 @@ q.enqueue("A", 5)
 q.enqueue("B", 1)
 q.enqueue("C", 3)
 
-if q.peek('highest') == "A" and len(q.queue) == 3:
-    print("peek highest: PASS")
-else:
-    print("peek highest: FAIL")
-
-if q.peek('lowest') == "B" and len(q.queue) == 3:
-    print("peek lowest: PASS")
-else:
-    print("peek lowest: FAIL")
+print("peek highest:", "PASS" if q.peek('highest') == "A" and len(q.queue) == 3 else "FAIL")
+print("peek lowest:", "PASS" if q.peek('lowest') == "B" and len(q.queue) == 3 else "FAIL")
+print("peek oldest:", "PASS" if q.peek('oldest') == "A" and len(q.queue) == 3 else "FAIL")
+print("peek newest:", "PASS" if q.peek('newest') == "C" and len(q.queue) == 3 else "FAIL")
 
 
 q = BiQueue()
-if q.dequeue('highest') is None:
-    print("empty queue: PASS")
-else:
-    print("empty queue: FAIL")
+
+print("empty queue: PASS" if q.dequeue('highest') is None else "FAIL")
